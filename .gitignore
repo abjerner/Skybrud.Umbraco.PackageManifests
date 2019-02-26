@@ -1,0 +1,4 @@
+src/packages/
+src/.vs/
+src/Skybrud.Umbraco.PackageManifests/obj/
+src/Skybrud.Umbraco.PackageManifests/bin/

@@ -1,0 +1,46 @@
+﻿.PackageManifests pre {
+  font-size: 11px;
+  line-height: 13px;
+  white-space: pre;
+}
+.Manifests .editor-alias {
+  font-size: 12px;
+  color: #a2a1a6;
+  line-height: 1.5em;
+  padding-top: 5px;
+}
+.Manifests .table.list > thead > tr > th {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.Manifests .add-link {
+  display: -ms-flexbox;
+  display: flex;
+  /*max-width: 66.6%;*/
+  padding: 5px 15px;
+  font-weight: bold;
+  color: #2e8aea;
+  color: #00aea2;
+  border: 1px dashed #d8d7d9;
+  box-sizing: border-box;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.Manifests i.icon.no-icon:after {
+  content: "\e230";
+  font-family: icomoon;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  color: #a2a1a6;
+}
+.Manifests .umb-overlay.umb-overlay-right {
+  width: calc(100% - 575px) !important;
+}
+.Manifests .umb-editor {
+  min-width: initial;
+  width: 100%;
+}

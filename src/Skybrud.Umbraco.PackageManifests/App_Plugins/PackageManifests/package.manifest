@@ -1,0 +1,16 @@
+{
+  "css": [
+    "/App_Plugins/PackageManifests/Styles/Default.css"
+  ],
+  "javascript": [
+    "/App_Plugins/PackageManifests/Backoffice/Hest.js",
+    "/App_Plugins/PackageManifests/Backoffice/EditManifest.js",
+    "/App_Plugins/PackageManifests/Backoffice/PropertyEditors.js",
+    "/App_Plugins/PackageManifests/Backoffice/GridEditors.js",
+    "/App_Plugins/PackageManifests/Backoffice/EditGridEditor.js",
+    "/App_Plugins/PackageManifests/Backoffice/EditPropertyEditor.js",
+    "/App_Plugins/PackageManifests/Backoffice/DeleteEditor.js",
+    "/App_Plugins/PackageManifests/Backoffice/Dashboard.js",
+    "/App_Plugins/PackageManifests/Backoffice/Json.js"
+  ]
+}

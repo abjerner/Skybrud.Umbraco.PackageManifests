@@ -1,0 +1,13 @@
+﻿<div ng-controller="Næh">
+    <div ng-repeat="field in model.value.fields" style="border: 1px solid rgb(179, 175, 189); margin-bottom: 5px;">
+        <div style="border-bottom: 1px solid rgb(179, 175, 189); background: #F3F3F5; padding: 5px;">
+            <strong>{{field.label}}</strong>
+            <span>({{field.key}})</span>
+        </div>
+        <div style="padding: 10px;">
+            <umb-property ng-repeat="property in field.$properties" property="property">
+                <umb-editor model="property"></umb-editor>
+            </umb-property>
+        </div>
+    </div>
+</div>

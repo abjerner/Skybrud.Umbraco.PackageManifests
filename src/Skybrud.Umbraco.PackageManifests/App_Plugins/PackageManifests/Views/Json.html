@@ -1,0 +1,6 @@
+﻿<div ng-controller="PackageManifests.Json.Controller">
+    <div class="alert alert-danger" ng-if="error">Specified JSON configuration is invalid: {{error}}</div>
+    <div class="alert alert-info" ng-if="!error && !json">Enter a JSON value to set the configuration.</div>
+    <div class="alert alert-success" ng-if="!error && json">Yay. Your JSON is valid.</div>
+    <textarea ng-model="json" class="umb-editor umb-textarea textstring" rows="10">{{json}}</textarea>
+</div>

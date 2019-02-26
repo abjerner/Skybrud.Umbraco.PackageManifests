@@ -1,0 +1,82 @@
+﻿<div class="PackageManifests" ng-controller="PackageManifests.EditManifest.Controller">
+    
+    <umb-load-indicator ng-if="!manifest"></umb-load-indicator>
+    
+    
+    <form ng-if="manifest" ng-submit="saveManifest()">
+        <umb-editor-view ng-if="manifest">
+            <umb-editor-header name="manifest.name" name-locked="true" hide-icon="true" hide-description="true" hide-alias="true"></umb-editor-header>
+            <umb-editor-container class="form-horizontal">
+                <umb-property ng-repeat="property in properties" property="property">
+                    <umb-editor model="property"></umb-editor>
+                </umb-property>
+                <pre>{{manifest | json}}</pre>
+            </umb-editor-container>
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button type="submit" button-style="success" shortcut="ctrl+s" label="Save" label-key="buttons_save"></umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+        </umb-editor-view>
+    </form>
+
+    
+
+    <form ng-if="propertyEditor" ng-submit="savePropertyEditor()">
+        <umb-editor-view>
+            <umb-editor-header name="propertyEditor.name" hide-description="true" alias="propertyEditor.alias" icon="propertyEditor.icon"></umb-editor-header>
+            <umb-editor-container class="form-horizontal">
+                
+                
+                
+                
+                <umb-property ng-repeat="property in properties" property="property">
+                    <umb-editor model="property"></umb-editor>
+                </umb-property>
+                
+                
+                <pre>{{propertyEditor | json}}</pre>
+            </umb-editor-container>
+            
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button
+                        type="submit"
+                        button-style="success"
+                        state="vm.page.saveButtonState"
+                        shortcut="ctrl+s"
+                        label="Save"
+                        label-key="buttons_save">
+                    </umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+            
+            
+
+        </umb-editor-view>
+    </form>
+
+    <umb-editor-view ng-if="gridEditor">
+        <umb-editor-header
+            name="gridEditor.name"
+            name-locked="true"
+            hide-icon="true"
+            hide-description="true"
+            hide-alias="false"
+            alias="gridEditor.alias"
+         ></umb-editor-header>
+        <umb-editor-container class="form-horizontal">
+            <pre>{{route | json}}</pre>
+            <pre>{{gridEditor | json}}</pre>
+        </umb-editor-container>
+    </umb-editor-view>
+
+    <style>
+        .PackageManifests pre {
+            font-size: 11px;
+            line-height: 13px;
+            white-space: pre;
+        }
+    </style>
+
+</div>

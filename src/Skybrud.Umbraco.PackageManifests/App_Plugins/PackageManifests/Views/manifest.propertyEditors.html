@@ -1,0 +1,26 @@
+﻿<div class="Manifests" ng-controller="PackageManifests.PropertyEditors.Controller">
+    <table class="table list" ng-show="model.value.length">
+        <thead>
+            <tr>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="editor in model.value">
+                <td>
+                    <i class="icon {{editor.icon || 'no-icon'}}"></i>
+                </td>
+                <td style="width: 100%;">
+                    <span class="editor-name">{{editor.name}}</span>
+                    <small class="editor-alias">({{editor.alias}})</small>
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" prevent-default class="add-link">Add property editor</a>
+</div>
