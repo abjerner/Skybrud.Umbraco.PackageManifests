@@ -29,7 +29,7 @@
             description: "A CSS class for the icon to be used in the <strong>Select Editor</strong> dialog eg: <code>icon-autofill</code>.",
             hideLabel: false,
             value: $scope.model.editor.icon,
-            view: "textbox"
+            view: "/App_Plugins/PackageManifests/Views/IconPicker.html"
         },
         {
             alias: "view",

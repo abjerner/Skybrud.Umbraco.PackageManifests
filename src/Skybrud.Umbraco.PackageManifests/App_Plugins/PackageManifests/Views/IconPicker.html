@@ -1,0 +1,8 @@
+﻿<div ng-controller="PackageManifests.IconPicker.Controller">
+    <div class="umb-iconpicker-item" style="max-width: 50px; border: 1px solid #B3AFBC;">
+        <a href="#" title="{{model.value}}" ng-click="open()" prevent-default="">
+            <i class="icon {{model.value}} large"></i>
+        </a>
+    </div>
+    <umb-overlay ng-if="overlay.show" model="overlay" position="right" view="overlay.view"></umb-overlay>
+</div>
