@@ -10,7 +10,6 @@
     "/App_Plugins/PackageManifests/Backoffice/EditGridEditor.js",
     "/App_Plugins/PackageManifests/Backoffice/EditPropertyEditor.js",
     "/App_Plugins/PackageManifests/Backoffice/DeleteEditor.js",
-    "/App_Plugins/PackageManifests/Backoffice/Dashboard.js",
     "/App_Plugins/PackageManifests/Backoffice/Json.js"
   ]
 }
