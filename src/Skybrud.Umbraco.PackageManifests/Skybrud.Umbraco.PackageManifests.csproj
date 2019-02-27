@@ -236,6 +236,7 @@
     <Content Include="App_Plugins\PackageManifests\Backoffice\GridEditors.js" />
     <Content Include="App_Plugins\PackageManifests\Backoffice\Hest - Copy %282%29.js" />
     <Content Include="App_Plugins\PackageManifests\Backoffice\Hest.js" />
+    <Content Include="App_Plugins\PackageManifests\Backoffice\IconPicker.js" />
     <Content Include="App_Plugins\PackageManifests\Backoffice\Json.js" />
     <Content Include="App_Plugins\PackageManifests\Backoffice\PackageManifests\delete.html" />
     <Content Include="App_Plugins\PackageManifests\Backoffice\PackageManifests\edit - Copy.html" />
@@ -244,6 +245,7 @@
     <Content Include="App_Plugins\PackageManifests\Styles\Default.css" />
     <Content Include="App_Plugins\PackageManifests\Styles\Default.min.css" />
     <Content Include="App_Plugins\PackageManifests\Views\editor.valuetype.html" />
+    <Content Include="App_Plugins\PackageManifests\Views\IconPicker.html" />
     <Content Include="App_Plugins\PackageManifests\Views\Json.html" />
     <Content Include="App_Plugins\PackageManifests\Views\manifest.files.html" />
     <Content Include="App_Plugins\PackageManifests\Views\manifest.gridEditors.html" />
