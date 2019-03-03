@@ -37,7 +37,7 @@
                 description: 'A list of JavaScript files with full path to load for your property editor.',
                 hideLabel: false,
                 value: r.manifest.javascript && Array.isArray(r.manifest.javascript) ? r.manifest.javascript : [],
-                view: '/App_Plugins/PackageManifests/Views/manifest.files.html',
+                view: '/App_Plugins/PackageManifests/Views/Files.html',
                 updated: function (p) { $scope.manifest.manifest.javascript = p.value; }
             },
             {
@@ -46,21 +46,21 @@
                 description: 'A list of CSS files with full path to load for your property editor.',
                 hideLabel: false,
                 value: r.manifest.css && Array.isArray(r.manifest.css) ? r.manifest.css : [],
-                view: '/App_Plugins/PackageManifests/Views/manifest.files.html',
+                view: '/App_Plugins/PackageManifests/Views/Files.html',
                 updated: function (p) { $scope.manifest.manifest.css = p.value; }
             },
             {
                 alias: "gridEditors",
                 label: "Grid editors",
                 value: r.manifest.gridEditors && Array.isArray(r.manifest.gridEditors) ? r.manifest.gridEditors : [],
-                view: "/App_Plugins/PackageManifests/Views/manifest.gridEditors.html",
+                view: "/App_Plugins/PackageManifests/Views/GridEditors.html",
                 updated: function (p) { $scope.manifest.manifest.gridEditors = p.value; }
             },
             {
                 alias: "propertyEditors",
                 label: "Property editors",
                 value: r.manifest.propertyEditors && Array.isArray(r.manifest.propertyEditors) ? r.manifest.propertyEditors : [],
-                view: "/App_Plugins/PackageManifests/Views/manifest.propertyEditors.html",
+                view: "/App_Plugins/PackageManifests/Views/PropertyEditors.html",
                 updated: function (p) { $scope.manifest.manifest.propertyEditors = p.value; }
             }
         ];

@@ -1,9 +1,13 @@
 ﻿angular.module("umbraco").controller("PackageManifests.IconPicker.Controller", function ($scope) {
-    $scope.open = function() {
+    $scope.open = function () {
+
+        var value = $scope.model.value + " ";
+
         $scope.overlay = {
             view: "iconpicker",
             show: true,
-            icon: $scope.model.value,
+            icon: value.split(" ")[0],
+            color: value.split(" ")[1],
             submitButtonLabel: "Continue",
             submit: function (model) {
                 var icon = [model.icon];

@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Skybrud.Umbraco.PackageManifests.Models.Umbraco {
 
-    public class UmbracoPackageManifestPropertyEditor {
+    public class PropertyEditor {
 
         [JsonProperty("alias")]
         public string Alias { get; set; }
@@ -13,7 +13,7 @@ namespace Skybrud.Umbraco.PackageManifests.Models.Umbraco {
         public JObject DefaultConfig { get; set; }
 
         [JsonProperty("editor")]
-        public UmbracoPackageManifestPropertyEditorEditor Editor { get; set; }
+        public PropertyEditorEditor Editor { get; set; }
 
         [JsonProperty("isParameterEditor")]
         public bool IsParameterEditor { get; set; }
@@ -28,7 +28,7 @@ namespace Skybrud.Umbraco.PackageManifests.Models.Umbraco {
         public string Group { get; set; }
 
         [JsonProperty("prevalues", NullValueHandling = NullValueHandling.Ignore)]
-        public UmbracoPackageManifestPropertyEditorPreValues PreValues { get; set; }
+        public PropertyEditorPreValues PreValues { get; set; }
 
         public bool ShouldSerializeDefaultConfig() {
             return DefaultConfig != null && DefaultConfig.Properties().Any();

@@ -1,12 +1,16 @@
 ﻿<div>
-    <select ng-model="model.value" name="handle">
+    <select ng-model="model.value" name="handle"
+            val-server="value"
+            ng-required="model.validation.mandatory"
+    >
         <option value="STRING">STRING</option>
         <option value="JSON">JSON</option>
         <option value="DATETIME">DATETIME</option>
         <option value="TEXT">TEXT</option>
         <option value="INT">INT</option>
     </select>
-    <span class="help-inline" val-msg-for="handle" val-toggle-msg="required">
-        <localize key="general_required">Required</localize>
-    </span>
+    
+    <span class="help-inline" val-msg-for="handle" val-toggle-msg="valServer"></span>
+    <span class="help-inline" val-msg-for="handle" val-toggle-msg="required"><localize key="general_required">Required</localize></span>
+    <pre>{{model | json}}</pre>
 </div>

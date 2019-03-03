@@ -17,6 +17,7 @@
                 alias: "alias",
                 label: "Alias",
                 description: "This must be a unique alias to your property editor.",
+                hideLabel: false,
                 value: editor.alias,
                 view: "textbox",
                 validation: {
@@ -27,6 +28,7 @@
                 alias: "name",
                 label: "Name",
                 description: "The friendly name of the property editor, shown in the Umbraco backoffice.",
+                hideLabel: false,
                 value: editor.name,
                 view: "textbox",
                 validation: {
@@ -37,6 +39,7 @@
                 alias: "icon",
                 label: "Icon",
                 description: "A CSS class for the icon to be used in the <strong>Select Editor</strong> dialog eg: <code>icon-autofill</code>.",
+                hideLabel: false,
                 value: editor.icon,
                 view: "/App_Plugins/PackageManifests/Views/IconPicker.html"
             },
@@ -44,6 +47,7 @@
                 alias: "group",
                 label: "Group",
                 description: "The group to place this editor in within the <strong>Select Editor</strong> dialog. Use a new group name or alternatively use an existing one such as <strong>Pickers</strong>.",
+                hideLabel: false,
                 value: editor.group,
                 view: "textbox"
             },
@@ -51,13 +55,15 @@
                 alias: "editor",
                 label: "Editor",
                 description: "",
+                hideLabel: false,
                 value: editor.editor,
                 view: "/App_Plugins/PackageManifests/Views/PropertyEditorEditor.html"
             },
             {
-                alias: "prevalue",
+                alias: "prevalues",
                 label: "Prevalues",
                 description: "",
+                hideLabel: false,
                 value: editor.prevalues,
                 view: "/App_Plugins/PackageManifests/Views/PropertyEditorPrevalues.html"
             }

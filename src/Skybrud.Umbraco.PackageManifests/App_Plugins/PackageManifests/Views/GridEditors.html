@@ -26,5 +26,5 @@
         </tbody>
     </table>
     <a href="#" prevent-default class="add-link" ng-click="addEditor()">Add grid editor</a>
-    <umb-overlay ng-if="overlay.show" model="overlay" position="right" view="overlay.view"></umb-overlay>
+    <umb-overlay ng-if="overlay.show" model="overlay" position="{{overlay.position || 'right'}}" view="overlay.view"></umb-overlay>
 </div>

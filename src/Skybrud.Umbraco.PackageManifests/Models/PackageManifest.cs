@@ -20,7 +20,7 @@ namespace Skybrud.Umbraco.PackageManifests.Models {
         public string Alias { get; private set; }
 
         [JsonProperty("manifest")]
-        public UmbracoPackageManifest Manifest { get; set; }
+        public Manifest Manifest { get; set; }
 
         [JsonIgnore]
         public bool HasPropertyEditors => Manifest.PropertyEditors != null && Manifest.PropertyEditors.Count > 0;
@@ -34,11 +34,11 @@ namespace Skybrud.Umbraco.PackageManifests.Models {
         [JsonIgnore]
         public bool HasCss => Manifest.Css != null && Manifest.Css.Length > 0;
 
-        public UmbracoPackageManifestPropertyEditor GetPropertyEditor(string alias) {
+        public PropertyEditor GetPropertyEditor(string alias) {
             return Manifest.PropertyEditors?.FirstOrDefault(x => x.Alias == alias);
         }
 
-        public UmbracoPackageManifestGridEditor GetGridEditor(string alias) {
+        public GridEditor GetGridEditor(string alias) {
             return Manifest.GridEditors?.FirstOrDefault(x => x.Alias == alias);
         }
 
@@ -52,7 +52,7 @@ namespace Skybrud.Umbraco.PackageManifests.Models {
             manifest.Name = System.IO.Path.GetDirectoryName(path).Split('\\').Last();
             manifest.Alias = manifest.Name;//.ToUrlSegment();
 
-            manifest.Manifest = JsonUtils.LoadJsonObject(path).ToObject<UmbracoPackageManifest>();
+            manifest.Manifest = JsonUtils.LoadJsonObject(path).ToObject<Manifest>();
 
             return manifest;
 

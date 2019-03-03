@@ -18,7 +18,7 @@ namespace Skybrud.Umbraco.PackageManifests.Controllers {
 
             ManifestService service = new ManifestService();
 
-            foreach (PackageManifestItem manifest in service.GetManifests()) {
+            foreach (PackageManifestItem manifest in service.GetManifestItems()) {
                 nodes.Add(CreateTreeNode(manifest.Alias, id, queryStrings, manifest.Name, "icon-tools", false));
             }
 

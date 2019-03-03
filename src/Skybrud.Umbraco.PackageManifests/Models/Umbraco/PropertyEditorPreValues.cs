@@ -1,10 +1,11 @@
 using Newtonsoft.Json;
 
 namespace Skybrud.Umbraco.PackageManifests.Models.Umbraco {
-    public class UmbracoPackageManifestPropertyEditorPreValues {
+
+    public class PropertyEditorPreValues {
 
         [JsonProperty("fields")]
-        public object[] Fields { get; set; }
+        public PropertyEditorPreValueField[] Fields { get; set; }
 
     }
 

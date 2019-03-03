@@ -5,12 +5,128 @@
   "javascript": [
     "/App_Plugins/PackageManifests/Backoffice/Hest.js",
     "/App_Plugins/PackageManifests/Backoffice/EditManifest.js",
+    "/App_Plugins/PackageManifests/Backoffice/PropertyEditorEditor.js",
+    "/App_Plugins/PackageManifests/Backoffice/PropertyEditorEditorValidation.js",
+    "/App_Plugins/PackageManifests/Backoffice/PropertyEditorPrevalues.js",
     "/App_Plugins/PackageManifests/Backoffice/PropertyEditors.js",
     "/App_Plugins/PackageManifests/Backoffice/GridEditors.js",
-    "/App_Plugins/PackageManifests/Backoffice/EditGridEditor.js",
-    "/App_Plugins/PackageManifests/Backoffice/EditPropertyEditor.js",
-    "/App_Plugins/PackageManifests/Backoffice/DeleteEditor.js",
-    "/App_Plugins/PackageManifests/Backoffice/Json.js",
-    "/App_Plugins/PackageManifests/Backoffice/IconPicker.js"
+    "/App_Plugins/PackageManifests/Backoffice/IconPicker.js",
+    "/App_Plugins/PackageManifests/Scripts/Controllers/Config/DocTypeGridEditor.js",
+    "/App_Plugins/PackageManifests/Scripts/Controllers/Config/DocTypeGridEditorAllowedTypes.js",
+    "/App_Plugins/PackageManifests/Scripts/Controllers/Config/Json.js"
+  ],
+  "gridEditorTemplates": [
+    {
+      "name": "Rich text editor",
+      "view": "rte",
+      "icon": "icon-article",
+      "editor": {
+        "name": "Rich text editor",
+        "view": "rte",
+        "icon": "icon-article"
+      }
+    },
+    {
+      "name": "Image",
+      "view": "media",
+      "icon": "icon-picture",
+      "editor": {
+        "name": "Image",
+        "view": "media",
+        "icon": "icon-picture"
+      }
+    },
+    {
+      "name": "Macro",
+      "view": "macro",
+      "icon": "icon-settings-alt",
+      "editor": {
+        "name": "Macro",
+        "view": "macro",
+        "icon": "icon-settings-alt"
+      }
+    },
+    {
+      "name": "Embed",
+      "view": "embed",
+      "icon": "icon-movie-alt",
+      "editor": {
+        "name": "Embed",
+        "view": "embed",
+        "icon": "icon-movie-alt"
+      }
+    },
+    {
+      "name": "Headline",
+      "view": "textstring",
+      "icon": "icon-coin",
+      "editor": {
+        "name": "Headline",
+        "view": "textstring",
+        "icon": "icon-coin",
+        "config": {
+          "style": "font-size: 36px; line-height: 45px; font-weight: bold",
+          "markup": "<h1>#value#</h1>"
+        }
+      }
+    },
+    {
+      "name": "Quote",
+      "view": "textstring",
+      "icon": "icon-quote",
+      "editor": {
+        "name": "Quote",
+        "view": "textstring",
+        "icon": "icon-quote",
+        "config": {
+          "style": "border-left: 3px solid #ccc; padding: 10px; color: #ccc; font-family: serif; font-style: italic; font-size: 18px",
+          "markup": "<blockquote>#value#</blockquote>"
+        }
+      }
+    },
+    {
+      "name": "Link Picker",
+      "group": "Skybrud.dk",
+      "icon": "icon-link",
+      "view": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html",
+      "config": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerPreValues.html",
+      "editor": {
+        "view": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html",
+        "icon": "icon-link",
+        "name": "Links"
+      }
+    },
+    {
+      "name": "Image Picker",
+      "group": "Skybrud.dk",
+      "view": "/App_Plugins/Skybrud.ImagePicker/Views/ImagePickerGridEditor.html",
+      "icon": "icon-pictures-alt-2",
+      "config": "/App_Plugins/Skybrud.ImagePicker/Views/ImagePickerPreValues.html",
+      "editor": {
+        "view": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html",
+        "icon": "icon-link",
+        "name": "Images"
+      }
+    },
+    {
+      "name": "Doc Type Grid Editor",
+      "icon": "icon-item-arrangement",
+      "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
+      "config": "/App_Plugins/PackageManifests/Views/Config/DocTypeGridEditor.html",
+      "editor": {
+        "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
+        "icon": "icon-item-arrangement",
+        "name": "Doc Type Grid Editor",
+        "config": {
+          "allowedDocTypes": [],
+          "nameTemplate": "",
+          "enablePreview": true,
+          "viewPath": "/Views/Partials/Grid/Editors/DocTypeGridEditor/",
+          "previewViewPath": "/Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/",
+          "previewCssFilePath": "",
+          "previewJsFilePath": ""
+        }
+      }
+    }
   ]
 }

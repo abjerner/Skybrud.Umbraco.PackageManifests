@@ -37,8 +37,22 @@
   -webkit-font-smoothing: antialiased;
   color: #a2a1a6;
 }
-.Manifests .umb-overlay.umb-overlay-right {
+.Manifests .umb-overlay.umb-overlay-right-wide {
   width: calc(100% - 575px) !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
+}
+.Manifests .umb-overlay.umb-overlay-right-wide .umb-overlay-header {
+  -ms-flex-preferred-size: 100px;
+  flex-basis: 100px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.Manifests .umb-overlay.umb-overlay-right-wide .umb-overlay-container {
+  padding: 20px;
 }
 .Manifests .umb-editor {
   min-width: initial;

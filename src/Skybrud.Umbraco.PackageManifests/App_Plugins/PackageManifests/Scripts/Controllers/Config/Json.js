@@ -2,6 +2,14 @@
 
     $scope.json = $scope.model.value && $scope.model.value ? JSON.stringify($scope.model.value, null, "  ") : "";
 
+    if (!$scope.model.config) {
+        $scope.model.config = {};
+    }
+
+    if (typeof ($scope.model.config.rows) != "number") {
+        $scope.model.config.rows = 10;
+    }
+
     $scope.$watch(function () {
         return $scope.json;
     }, function (value) {

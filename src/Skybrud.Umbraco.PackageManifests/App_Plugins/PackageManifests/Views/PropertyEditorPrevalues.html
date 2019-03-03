@@ -1,0 +1,26 @@
+﻿<div ng-controller="PackageManifests.PropertyEditorPrevalues.Controller">
+    <table class="table list" ng-show="model.value.fields.length > 0">
+        <thead>
+            <tr>
+                <th>Label</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="field in model.value.fields">
+                <td style="width: 100%;">
+                    <span class="field-name">{{field.label}}</span>
+                    <small class="field-alias">({{field.key}})</small>
+                </td>
+                <td style="white-space: nowrap;">
+                    <div style="white-space: nowrap;">
+                        <a href="#" prevent-default ng-click="edit(field)"><i class="icon icon-edit"></i></a>
+                        <a href="#" prevent-default ng-click="delete($index)"><i class="icon icon-delete red"></i></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" prevent-default="" ng-click="add()" class="add-link">Add new field</a>
+    <umb-overlay ng-if="overlay.show" model="overlay" position="right" view="overlay.view"></umb-overlay>
+</div>

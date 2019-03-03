@@ -3,7 +3,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Skybrud.Umbraco.PackageManifests.Models.Umbraco {
-    public class UmbracoPackageManifestGridEditor {
+
+    public class GridEditor {
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -20,15 +21,19 @@ namespace Skybrud.Umbraco.PackageManifests.Models.Umbraco {
         [JsonProperty("render")]
         public string Render { get; set; }
 
-        [JsonProperty("config")]
+        [JsonProperty("config", NullValueHandling = NullValueHandling.Ignore)]
         public JToken Config { get; set; }
-
-        public bool ShouldSerializeIcon() {
-            return String.IsNullOrWhiteSpace(Icon) == false;
-        }
 
         public bool ShouldSerializeRender() {
             return String.IsNullOrWhiteSpace(Render) == false;
+        }
+
+        public GridEditor() {
+            Name = String.Empty;
+            Alias = String.Empty;
+            Icon = String.Empty;
+            View = String.Empty;
+            Render = String.Empty;
         }
 
     }

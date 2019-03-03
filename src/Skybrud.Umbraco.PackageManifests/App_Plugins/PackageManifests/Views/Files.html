@@ -1,4 +1,4 @@
-﻿<div ng-controller="Nåh">
+﻿<div class="Manifests" ng-controller="Nåh">
     
     <div ng-repeat="file in files" style="display: flex; margin-bottom: 5px;">
         <input type="text" ng-model="file.file" style="width: 100%;" />
@@ -9,6 +9,6 @@
         </div>
     </div>
     
-    <a href="#" prevent-default="" ng-click="files.push({file:''})" class="blue">Append new file</a>
+    <a href="#" prevent-default="" ng-click="files.push({file:''})" class="add-link">Append new file</a>
 
 </div>
