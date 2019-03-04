@@ -113,7 +113,7 @@
       "name": "Doc Type Grid Editor",
       "icon": "icon-item-arrangement",
       "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
-      "config": "/App_Plugins/Skybrud.PackageManifests/Views/Config/DocTypeGridEditor.html",
+      "config": "/App_Plugins/Skybrud.PackageManifests/Views/Editors/Config/DocTypeGridEditor.html",
       "editor": {
         "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
         "icon": "icon-item-arrangement",
