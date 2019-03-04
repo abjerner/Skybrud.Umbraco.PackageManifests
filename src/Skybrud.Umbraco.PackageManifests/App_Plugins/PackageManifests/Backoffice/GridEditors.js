@@ -44,8 +44,7 @@
         $scope.model.value.splice(index, 1);
     };
 
-    function edit(editor, title) {
-
+    function edit(editor, title, callback) {
 
         var view = {
             alias: "view",
@@ -145,6 +144,7 @@
                 angular.forEach(properties, function(p) {
                     editor[p.alias] = p.value;
                 });
+                if (callback) callback(editor);
                 $scope.overlay.show = false;
                 $scope.overlay = null;
             }
