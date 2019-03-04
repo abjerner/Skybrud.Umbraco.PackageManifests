@@ -5,7 +5,7 @@
     $scope.id = $scope.currentNode.id.split(',');
     $scope.name = $scope.currentNode.name;
 
-    var baseUrl = '/umbraco/backoffice/PackageManifests/Manifests/';
+    var baseUrl = '/umbraco/backoffice/Skybrud.PackageManifests/Manifests/';
 
     if ($scope.id.length == 3) {
 

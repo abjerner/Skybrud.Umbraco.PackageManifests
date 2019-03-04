@@ -11,7 +11,7 @@
     $scope.packageAlias = id[0];
     $scope.path = ["-1"];
 
-    var baseUrl = "/umbraco/backoffice/PackageManifests/Manifests/";
+    var baseUrl = "/umbraco/backoffice/Skybrud.PackageManifests/Manifests/";
 
     $scope.saveManifest = function () {
 
@@ -25,7 +25,7 @@
 
     };
 
-    $http.get("/umbraco/backoffice/PackageManifests/Manifests/GetManifestByAlias?alias=" + $routeParams.id).success(function (r) {
+    $http.get("/umbraco/backoffice/Skybrud.PackageManifests/Manifests/GetManifestByAlias?alias=" + $routeParams.id).success(function (r) {
 
         $scope.manifest = r;
         $scope.name = r.name;
@@ -37,7 +37,7 @@
                 description: 'A list of JavaScript files with full path to load for your property editor.',
                 hideLabel: false,
                 value: r.manifest.javascript && Array.isArray(r.manifest.javascript) ? r.manifest.javascript : [],
-                view: '/App_Plugins/PackageManifests/Views/Files.html',
+                view: '/App_Plugins/Skybrud.PackageManifests/Views/Files.html',
                 updated: function (p) { $scope.manifest.manifest.javascript = p.value; }
             },
             {
@@ -46,21 +46,21 @@
                 description: 'A list of CSS files with full path to load for your property editor.',
                 hideLabel: false,
                 value: r.manifest.css && Array.isArray(r.manifest.css) ? r.manifest.css : [],
-                view: '/App_Plugins/PackageManifests/Views/Files.html',
+                view: '/App_Plugins/Skybrud.PackageManifests/Views/Files.html',
                 updated: function (p) { $scope.manifest.manifest.css = p.value; }
             },
             {
                 alias: "gridEditors",
                 label: "Grid editors",
                 value: r.manifest.gridEditors && Array.isArray(r.manifest.gridEditors) ? r.manifest.gridEditors : [],
-                view: "/App_Plugins/PackageManifests/Views/GridEditors.html",
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/GridEditors.html",
                 updated: function (p) { $scope.manifest.manifest.gridEditors = p.value; }
             },
             {
                 alias: "propertyEditors",
                 label: "Property editors",
                 value: r.manifest.propertyEditors && Array.isArray(r.manifest.propertyEditors) ? r.manifest.propertyEditors : [],
-                view: "/App_Plugins/PackageManifests/Views/PropertyEditors.html",
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/PropertyEditors.html",
                 updated: function (p) { $scope.manifest.manifest.propertyEditors = p.value; }
             }
         ];

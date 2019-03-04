@@ -24,7 +24,7 @@
         ];
 
         $scope.overlay = {
-            view: "/App_Plugins/PackageManifests/Views/Overlays/Properties.html",
+            view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/Properties.html",
             show: true,
             properties: properties,
             title: "Editor Validation",

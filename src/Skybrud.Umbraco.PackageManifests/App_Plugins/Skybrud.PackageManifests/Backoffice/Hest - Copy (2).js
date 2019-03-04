@@ -11,7 +11,7 @@
     $scope.packageAlias = id[0];
     $scope.path = ['-1'];
 
-    var baseUrl = '/umbraco/backoffice/PackageManifests/Manifests/';
+    var baseUrl = '/umbraco/backoffice/Skybrud.PackageManifests/Manifests/';
 
     $scope.saveManifest = function () {
 
@@ -44,7 +44,7 @@
 
     if (id.length === 1) {
 
-        $http.get("/umbraco/backoffice/PackageManifests/Manifests/GetManifestByAlias?alias=" + $routeParams.id).success(function (r) {
+        $http.get("/umbraco/backoffice/Skybrud.PackageManifests/Manifests/GetManifestByAlias?alias=" + $routeParams.id).success(function (r) {
             $scope.manifest = r;
             $scope.name = r.name;
 
@@ -58,7 +58,7 @@
                     description: 'A list of JavaScript files with full path to load for your property editor.',
                     hideLabel: false,
                     value: r.manifest.javascript && Array.isArray(r.manifest.javascript) ? r.manifest.javascript : [],
-                    view: '/App_Plugins/PackageManifests/Views/manifest.files.html',
+                    view: '/App_Plugins/Skybrud.PackageManifests/Views/manifest.files.html',
                     updated: function (p) { $scope.manifest.manifest.javascript = p.value; }
                 },
                 {
@@ -67,21 +67,21 @@
                     description: 'A list of CSS files with full path to load for your property editor.',
                     hideLabel: false,
                     value: r.manifest.css && Array.isArray(r.manifest.css) ? r.manifest.css : [],
-                    view: '/App_Plugins/PackageManifests/Views/manifest.files.html',
+                    view: '/App_Plugins/Skybrud.PackageManifests/Views/manifest.files.html',
                     updated: function (p) { $scope.manifest.manifest.css = p.value; }
                 },
                 {
                     alias: "gridEditors",
                     label: "Grid editors",
                     value: r.manifest.propertyEditors && Array.isArray(r.manifest.gridEditors) ? r.manifest.gridEditors : [],
-                    view: "/App_Plugins/PackageManifests/Views/manifest.gridEditors.html",
+                    view: "/App_Plugins/Skybrud.PackageManifests/Views/manifest.gridEditors.html",
                     updated: function (p) { $scope.manifest.manifest.gridEditors = p.value; }
                 },
                 {
                     alias: "propertyEditors",
                     label: "Property editors",
                     value: r.manifest.propertyEditors && Array.isArray(r.manifest.propertyEditors) ? r.manifest.propertyEditors : [],
-                    view: "/App_Plugins/PackageManifests/Views/manifest.propertyEditors.html",
+                    view: "/App_Plugins/Skybrud.PackageManifests/Views/manifest.propertyEditors.html",
                     updated: function (p) { $scope.manifest.manifest.propertyEditors = p.value; }
                 }
             ];
@@ -102,7 +102,7 @@
 
         if (id[1] == 'propertyEditors') {
 
-            $http.get('/umbraco/backoffice/PackageManifests/Manifests/GetPropertyEditor?alias=' + $routeParams.id).success(function (r) {
+            $http.get('/umbraco/backoffice/Skybrud.PackageManifests/Manifests/GetPropertyEditor?alias=' + $routeParams.id).success(function (r) {
                 if (!r.icon) r.icon = 'icon-autofill';
                 $scope.propertyEditor = r;
                 $scope.name = r.name;
@@ -149,7 +149,7 @@
                         description: 'This is the type of data you want your property editor to save to Umbraco.',
                         hideLabel: false,
                         value: r.editor ? r.editor.valueType : '',
-                        view: '/App_Plugins/PackageManifests/Views/editor.valuetype.html',
+                        view: '/App_Plugins/Skybrud.PackageManifests/Views/editor.valuetype.html',
                         updated: function (p) { $scope.propertyEditor.editor.valueType = p.value; }
                     },
                     {
@@ -157,7 +157,7 @@
                         label: 'Prevalue fields',
                         hideLabel: false,
                         value: r.prevalues,
-                        view: '/App_Plugins/PackageManifests/Views/prevalues.fields.html',
+                        view: '/App_Plugins/Skybrud.PackageManifests/Views/prevalues.fields.html',
                         updated: function (p) { $scope.propertyEditor.prevalues = p.value; }
                     }
                 ];
@@ -183,7 +183,7 @@
 
         } else if (id[1] == 'gridEditors') {
 
-            $http.get('/umbraco/backoffice/PackageManifests/Manifests/GetGridEditor?alias=' + $routeParams.id).success(function (r) {
+            $http.get('/umbraco/backoffice/Skybrud.PackageManifests/Manifests/GetGridEditor?alias=' + $routeParams.id).success(function (r) {
                 $scope.gridEditor = r;
                 $scope.name = r.name;
             });

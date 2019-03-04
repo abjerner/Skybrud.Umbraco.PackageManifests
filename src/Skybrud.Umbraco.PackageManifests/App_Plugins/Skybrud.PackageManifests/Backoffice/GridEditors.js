@@ -15,7 +15,7 @@
             add($scope.templateGroups[0].templates[0]);
         } else {
             $scope.overlay = {
-                view: "/App_Plugins/PackageManifests/Views/Overlays/AddGridEditor.html",
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/AddGridEditor.html",
                 show: true,
                 templateGroups: $scope.templateGroups,
                 title: "Select grid editor template",
@@ -64,7 +64,7 @@
             description: "Configuration for the grid editor.",
             hideLabel: false,
             value: editor.config ? editor.config : "",
-            view: "/App_Plugins/PackageManifests/Views/Config.html",
+            view: "/App_Plugins/Skybrud.PackageManifests/Views/Config.html",
             editorView: view.value
         };
 
@@ -97,7 +97,7 @@
                 description: "A CSS class for the icon to be used in the <strong>Select Editor</strong> dialog eg: <code>icon-autofill</code>.",
                 hideLabel: false,
                 value: editor.icon ? editor.icon : "icon-item-arrangement",
-                view: "/App_Plugins/PackageManifests/Views/IconPicker.html"
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/IconPicker.html"
             },
             view,
             {
@@ -129,12 +129,12 @@
             }
 
             // Fallback to tdefault config view
-            config.view = "/App_Plugins/PackageManifests/Views/Config/Json.html";
+            config.view = "/App_Plugins/Skybrud.PackageManifests/Views/Config/Json.html";
 
         }, true);
 
         $scope.overlay = {
-            view: "/App_Plugins/PackageManifests/Views/Overlays/Properties.html",
+            view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/Properties.html",
             show: true,
             properties: properties,
             title: title,
@@ -151,7 +151,7 @@
         };
     }
 
-    $http.get("/umbraco/backoffice/PackageManifests/Manifests/GetGridEditorTemplates").success(function(res) {
+    $http.get("/umbraco/backoffice/Skybrud.PackageManifests/Manifests/GetGridEditorTemplates").success(function(res) {
         $scope.templateGroups = res;
     });
 

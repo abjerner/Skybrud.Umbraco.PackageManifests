@@ -8,7 +8,7 @@
                 label: "Config",
                 hideLabel: true,
                 value: $scope.model.value,
-                view: "/App_Plugins/PackageManifests/Views/Config/Json.html",
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/Config/Json.html",
                 config: {
                     rows: 30
                 }
@@ -28,7 +28,7 @@
                 description: "An array of doc type aliases of which should be allowed to be selected in the grid editor.Strings can be REGEX patterns to allow matching groups of doc types in a single entry. Ie <code>Widget$</code> will match all doc types with an alias ending in <code>Widget</code>.",
                 hideLabel: false,
                 value: $scope.model.value.allowedDocTypes,
-                view: "/App_Plugins/PackageManifests/Views/Config/DocTypeGridEditorAllowedTypes.html"
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/Config/DocTypeGridEditorAllowedTypes.html"
             },
             {
                 alias: "nameTemplate",
@@ -82,7 +82,7 @@
 
     function editProperties(properties, title) {
         $scope.overlay = {
-            view: "/App_Plugins/PackageManifests/Views/Overlays/Properties.html",
+            view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/Properties.html",
             show: true,
             properties: properties,
             title: title,

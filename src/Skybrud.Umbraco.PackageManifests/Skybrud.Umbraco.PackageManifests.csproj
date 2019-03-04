@@ -20,19 +20,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="App_Plugins\PackageManifests\Styles\Default.less" />
-    <None Include="App_Plugins\PackageManifests\Styles\Default.css">
+    <None Include="App_Plugins\Skybrud.PackageManifests\Styles\Default.less" />
+    <None Include="App_Plugins\Skybrud.PackageManifests\Styles\Default.css">
       <DependentUpon>Default.less</DependentUpon>
     </None>
-    <Content Include="App_Plugins\PackageManifests\Styles\Default.min.css">
+    <Content Include="App_Plugins\Skybrud.PackageManifests\Styles\Default.min.css">
       <DependentUpon>Default.css</DependentUpon>
     </Content>
   </ItemGroup>
   
   <ItemGroup>
-    <Content Include="App_Plugins\PackageManifests\**\*.js" />
-    <Content Include="App_Plugins\PackageManifests\**\*.html" />
-    <Content Include="App_Plugins\PackageManifests\package.manifest" />
+    <Content Include="App_Plugins\Skybrud.PackageManifests\**\*.js" />
+    <Content Include="App_Plugins\Skybrud.PackageManifests\**\*.html" />
+    <Content Include="App_Plugins\Skybrud.PackageManifests\package.manifest" />
   </ItemGroup>
 
   <ItemGroup>

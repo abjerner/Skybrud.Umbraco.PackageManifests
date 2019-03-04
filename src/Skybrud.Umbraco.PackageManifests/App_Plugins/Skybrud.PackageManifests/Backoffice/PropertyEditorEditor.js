@@ -28,7 +28,7 @@
                 description: "This is the type of data you want your property editor to save to Umbraco.",
                 value: $scope.model.value.valueType,
                 view: "textbox",
-                //view: "/App_Plugins/PackageManifests/Views/Editor.ValueType.html",
+                //view: "/App_Plugins/Skybrud.PackageManifests/Views/Editor.ValueType.html",
                 validation: {
                     mandatory: true
                 }
@@ -38,7 +38,7 @@
                 label: "Validation",
                 description: "Object describing required validators on the editor.",
                 value: $scope.model.value.validation,
-                view: "/App_Plugins/PackageManifests/Views/PropertyEditorEditorValidation.html"
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/PropertyEditorEditorValidation.html"
             },
             {
                 alias: "isReadOnly",
@@ -50,7 +50,7 @@
         ];
 
         $scope.overlay = {
-            view: "/App_Plugins/PackageManifests/Views/Overlays/Properties.html",
+            view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/Properties.html",
             show: true,
             properties: properties,
             title: "Editor",
