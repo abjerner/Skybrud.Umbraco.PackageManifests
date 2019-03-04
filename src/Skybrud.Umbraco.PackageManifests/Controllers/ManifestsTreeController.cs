@@ -31,7 +31,7 @@ namespace Skybrud.Umbraco.PackageManifests.Controllers {
             MenuItemCollection collection = new MenuItemCollection();
 
             // Add a "Reload" menu item
-            collection.Items.Add<RefreshNode, ActionRefresh>(Localize("actions/" + ActionRefresh.Instance.Alias));
+            if (id == "-1") collection.Items.Add<RefreshNode, ActionRefresh>(Localize("actions/" + ActionRefresh.Instance.Alias));
 
             return collection;
 

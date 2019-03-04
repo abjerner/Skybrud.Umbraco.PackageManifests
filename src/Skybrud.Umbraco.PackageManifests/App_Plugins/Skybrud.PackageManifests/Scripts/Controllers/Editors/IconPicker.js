@@ -1,8 +1,6 @@
 ﻿angular.module("umbraco").controller("PackageManifests.IconPicker.Controller", function ($scope) {
     $scope.open = function () {
-
         var value = $scope.model.value + " ";
-
         $scope.overlay = {
             view: "iconpicker",
             show: true,

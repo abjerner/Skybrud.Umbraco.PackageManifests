@@ -10,7 +10,7 @@
 
     $scope.add = function () {
         edit({}, "Add prevalue field", function (e) {
-            $scope.model.value.push(e);
+            $scope.model.value.fields.push(e);
         });
     };
 
@@ -73,9 +73,9 @@
             closeButtonLabel: "Close",
             submit: function () {
                 angular.forEach(properties, function (p) {
-                    editor[p.alias] = p.value;
+                    field[p.alias] = p.value;
                 });
-                if (callback) callback(editor);
+                if (callback) callback(field);
                 $scope.overlay.show = false;
                 $scope.overlay = null;
             }

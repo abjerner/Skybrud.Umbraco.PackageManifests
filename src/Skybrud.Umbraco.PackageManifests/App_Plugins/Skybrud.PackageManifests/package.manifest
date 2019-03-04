@@ -3,17 +3,18 @@
     "/App_Plugins/Skybrud.PackageManifests/Styles/Default.css"
   ],
   "javascript": [
-    "/App_Plugins/Skybrud.PackageManifests/Backoffice/Hest.js",
-    "/App_Plugins/Skybrud.PackageManifests/Backoffice/EditManifest.js",
-    "/App_Plugins/Skybrud.PackageManifests/Backoffice/PropertyEditorEditor.js",
-    "/App_Plugins/Skybrud.PackageManifests/Backoffice/PropertyEditorEditorValidation.js",
-    "/App_Plugins/Skybrud.PackageManifests/Backoffice/PropertyEditorPrevalues.js",
-    "/App_Plugins/Skybrud.PackageManifests/Backoffice/PropertyEditors.js",
-    "/App_Plugins/Skybrud.PackageManifests/Backoffice/GridEditors.js",
-    "/App_Plugins/Skybrud.PackageManifests/Backoffice/IconPicker.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Backoffice/EditManifest.js",
     "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Config/DocTypeGridEditor.js",
     "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Config/DocTypeGridEditorAllowedTypes.js",
-    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Config/Json.js"
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Config/Json.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Editors/Files.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Editors/GridEditors.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Editors/IconPicker.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Editors/PropertyEditorEditor.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Editors/PropertyEditorEditorValidation.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Editors/PropertyEditorPrevalues.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Controllers/Editors/PropertyEditors.js",
+    "/App_Plugins/Skybrud.PackageManifests/Scripts/Interceptor.js"
   ],
   "gridEditorTemplates": [
     {

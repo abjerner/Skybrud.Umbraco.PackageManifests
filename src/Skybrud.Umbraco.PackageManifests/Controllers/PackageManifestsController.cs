@@ -11,9 +11,9 @@ using Umbraco.Web.WebApi;
 
 namespace Skybrud.Umbraco.PackageManifests.Controllers {
 
-    [PluginController("PackageManifests")]
+    [PluginController("Skybrud")]
     [AngularJsonOnlyConfiguration]
-    public class ManifestsController : UmbracoAuthorizedApiController {
+    public class PackageManifestsController : UmbracoAuthorizedApiController {
 
         protected readonly ManifestService Manifests = new ManifestService();
 
@@ -46,8 +46,8 @@ namespace Skybrud.Umbraco.PackageManifests.Controllers {
             // TODO: Validate the property editor from the body
 
             // Update the properties
-            existingManifest.Manifest.JavaScript = manifest.JavaScript;
-            existingManifest.Manifest.Css = manifest.Css;
+            existingManifest.Manifest.JavaScript = (manifest.JavaScript ?? new string[0]).OrderBy(x => x).ToArray();
+            existingManifest.Manifest.Css = (manifest.Css ?? new string[0]).OrderBy(x => x).ToArray();
             existingManifest.Manifest.PropertyEditors = manifest.PropertyEditors;
             existingManifest.Manifest.GridEditors = manifest.GridEditors;
 

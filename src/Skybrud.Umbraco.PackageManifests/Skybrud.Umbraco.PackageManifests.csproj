@@ -21,9 +21,9 @@
 
   <ItemGroup>
     <None Include="App_Plugins\Skybrud.PackageManifests\Styles\Default.less" />
-    <None Include="App_Plugins\Skybrud.PackageManifests\Styles\Default.css">
+    <Content Include="App_Plugins\Skybrud.PackageManifests\Styles\Default.css">
       <DependentUpon>Default.less</DependentUpon>
-    </None>
+    </Content>
     <Content Include="App_Plugins\Skybrud.PackageManifests\Styles\Default.min.css">
       <DependentUpon>Default.css</DependentUpon>
     </Content>
