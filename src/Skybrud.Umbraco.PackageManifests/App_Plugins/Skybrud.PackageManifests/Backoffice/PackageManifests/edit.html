@@ -1,12 +1,16 @@
 ﻿<div class="PackageManifests" ng-controller="PackageManifests.EditManifest.Controller">
     <umb-load-indicator ng-if="!manifest"></umb-load-indicator>
-    <form ng-if="manifest" ng-submit="saveManifest()">
+    <form ng-if="manifest" ng-submit="saveManifest()" val-form-manager>
         <umb-editor-view ng-if="manifest">
             <umb-editor-header name="manifest.name" name-locked="true" hide-icon="true" hide-description="true" hide-alias="true"></umb-editor-header>
             <umb-editor-container class="form-horizontal">
-                <umb-property ng-repeat="property in properties" property="property">
-                    <umb-editor model="property"></umb-editor>
-                </umb-property>
+                <umb-box>
+                    <umb-box-content>
+                        <umb-property ng-repeat="property in properties" property="property">
+                            <umb-property-editor model="property"></umb-property-editor>
+                        </umb-property>
+                    </umb-box-content>
+                </umb-box>
             </umb-editor-container>
             <umb-editor-footer>
                 <umb-editor-footer-content-right>

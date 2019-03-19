@@ -1,4 +1,4 @@
-﻿angular.module("umbraco").controller("PackageManifests.PropertyEditorEditorValidation.Controller", function ($scope) {
+﻿angular.module("umbraco").controller("PackageManifests.PropertyEditorEditorValidation.Controller", function ($scope, editorService) {
 
     if (!$scope.model.value) $scope.model.value = {};
 
@@ -23,25 +23,24 @@
             }
         ];
 
-        $scope.overlay = {
-            view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/Properties.html",
-            show: true,
-            properties: properties,
+        editorService.open({
             title: "Editor Validation",
-            submitButtonLabel: "Continue",
-            closeButtonLabel: "Close",
-            submit: function () {
-                angular.forEach(properties, function (p) {
+            view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/Properties.html",
+            properties: properties,
+            submit: function (model) {
+                angular.forEach(model, function (p) {
                     if (p.view === "boolean") {
                         $scope.model.value[p.alias] = p.value === "1";
                     } else {
                         $scope.model.value[p.alias] = p.value;
                     }
                 });
-                $scope.overlay.show = false;
-                $scope.overlay = null;
+                editorService.close();
+            },
+            close: function () {
+                editorService.close();
             }
-        };
+        });
 
     }
 

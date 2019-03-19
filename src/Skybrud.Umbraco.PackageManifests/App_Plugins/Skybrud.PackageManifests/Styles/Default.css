@@ -3,7 +3,11 @@
   line-height: 13px;
   white-space: pre;
 }
-.Manifests .editor-alias {
+.PackageManifests .umb-editor {
+  position: initial;
+}
+.Manifests .editor-alias,
+.Manifests .field-alias {
   font-size: 12px;
   color: #a2a1a6;
   line-height: 1.5em;
@@ -12,6 +16,9 @@
 .Manifests .table.list > thead > tr > th {
   padding-top: 7px;
   padding-bottom: 7px;
+}
+.Manifests .umb-node-preview-add {
+  max-width: 100%;
 }
 .Manifests .add-link {
   display: -ms-flexbox;
@@ -54,7 +61,8 @@
 .Manifests .umb-overlay.umb-overlay-right-wide .umb-overlay-container {
   padding: 20px;
 }
-.Manifests .umb-editor {
+.Manifests .umb-textstring,
+.Manifests .umb-textarea {
   min-width: initial;
   width: 100%;
 }

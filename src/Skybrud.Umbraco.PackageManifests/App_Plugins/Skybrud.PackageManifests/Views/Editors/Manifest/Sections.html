@@ -1,0 +1,25 @@
+﻿<div class="Manifests" ng-controller="PackageManifests.Sections.Controller">
+    <table class="table list" ng-show="model.value.length">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="section in model.value">
+                <td style="width: 100%;">
+                    <span class="editor-name">{{section.name}}</span>
+                    <small class="editor-alias">({{section.alias}})</small>
+                </td>
+                <td>
+                    <div style="white-space: nowrap;">
+                        <a href="#" prevent-default ng-click="edit(section)"><i class="icon icon-edit"></i></a>
+                        <a href="#" prevent-default ng-click="delete($index, section)"><i class="icon icon-delete red"></i></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" prevent-default class="umb-node-preview-add" ng-click="add()">Add section</a>
+</div>

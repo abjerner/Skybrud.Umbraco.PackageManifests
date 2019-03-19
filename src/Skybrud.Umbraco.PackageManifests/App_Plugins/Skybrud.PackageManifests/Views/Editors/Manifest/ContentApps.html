@@ -1,0 +1,39 @@
+﻿<div class="Manifests" ng-controller="PackageManifests.ContentApps.Controller">
+    <table class="table list" ng-show="model.value.length">
+        <thead>
+        <tr>
+            <th>Icon</th>
+            <th>Weight</th>
+            <th>Name</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="contentApp in model.value">
+            <td>
+                <i class="icon {{contentApp.icon || 'no-icon'}}"></i>
+            </td>
+            <td>{{contentApp.weight}}</td>
+            <td style="white-space: nowrap;">
+                <span class="editor-name">{{contentApp.name}}</span>
+                <small class="editor-alias">({{contentApp.alias}})</small>
+            </td>
+            <td style="width: 100%;">
+                <em ng-show="!contentApp.show">Not specified</em>
+                <span ng-show="contentApp.show">
+                    <span ng-repeat="rule in contentApp.show">
+                        <code>{{rule}}</code>
+                    </span>
+                </span>
+            </td>
+            <td>
+                <div style="white-space: nowrap;">
+                    <a href="#" prevent-default ng-click="edit(contentApp)"><i class="icon icon-edit"></i></a>
+                    <a href="#" prevent-default ng-click="delete($index, contentApp)"><i class="icon icon-delete red"></i></a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="#" prevent-default class="umb-node-preview-add" ng-click="add()">Add content app</a>
+</div>

@@ -1,0 +1,29 @@
+﻿<div class="Manifests" ng-controller="PackageManifests.ContentApps.Controller">
+    <table class="table list" ng-show="model.value.length">
+        <thead>
+            <tr>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="contentApp in model.value">
+                <td>
+                    <i class="icon {{contentApp.icon || 'no-icon'}}"></i>
+                </td>
+                <td style="width: 100%;">
+                    <span class="editor-name">{{contentApp.name}}</span>
+                    <small class="editor-alias">({{contentApp.alias}})</small>
+                </td>
+                <td>
+                    <div style="white-space: nowrap;">
+                        <a href="#" prevent-default ng-click="edit(contentApp)"><i class="icon icon-edit"></i></a>
+                        <a href="#" prevent-default ng-click="delete($index)"><i class="icon icon-delete red"></i></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" prevent-default class="add-link" ng-click="add()">Add content app</a>
+</div>

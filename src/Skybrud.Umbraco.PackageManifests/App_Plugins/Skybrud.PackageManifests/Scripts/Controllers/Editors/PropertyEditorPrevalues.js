@@ -1,4 +1,4 @@
-﻿angular.module("umbraco").controller("PackageManifests.PropertyEditorPrevalues.Controller", function($scope) {
+﻿angular.module("umbraco").controller("PackageManifests.PropertyEditorPrevalues.Controller", function($scope, editorService) {
 
     if (!$scope.model.value) {
         $scope.model.value = {};
@@ -64,22 +64,26 @@
             }
         ];
 
-        $scope.overlay = {
-            view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/Properties.html",
-            show: true,
-            properties: properties,
+        var data = {
+            hideIcon: true,
+            properties: properties
+        };
+
+        editorService.open({
             title: title,
-            submitButtonLabel: "Continue",
-            closeButtonLabel: "Close",
-            submit: function () {
-                angular.forEach(properties, function (p) {
+            view: "/App_Plugins/Skybrud.PackageManifests/Views/Overlays/Properties2.html",
+            data: data,
+            submit: function (model) {
+                angular.forEach(model.properties, function (p) {
                     field[p.alias] = p.value;
                 });
                 if (callback) callback(field);
-                $scope.overlay.show = false;
-                $scope.overlay = null;
+                editorService.close();
+            },
+            close: function () {
+                editorService.close();
             }
-        };
+        });
 
     }
 

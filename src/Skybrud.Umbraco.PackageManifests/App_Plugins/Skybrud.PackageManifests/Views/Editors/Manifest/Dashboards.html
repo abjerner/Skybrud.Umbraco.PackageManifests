@@ -1,0 +1,26 @@
+﻿<div class="Manifests" ng-controller="PackageManifests.Dashboards.Controller">
+    <table class="table list" ng-show="model.value.length">
+        <thead>
+            <tr>
+                <th>Weight</th>
+                <th>Alias</th>
+                <th>Sections</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dashboard in model.value">
+                <td>{{dashboard.weight}}</td>
+                <td style="white-space: nowrap;">{{dashboard.alias}}</td>
+                <td style="width: 100%;">{{dashboard.sections.join(', ')}}</td>
+                <td>
+                    <div style="white-space: nowrap;">
+                        <a href="#" prevent-default ng-click="edit(dashboard)"><i class="icon icon-edit"></i></a>
+                        <a href="#" prevent-default ng-click="delete($index, dashboard)"><i class="icon icon-delete red"></i></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" prevent-default class="umb-node-preview-add" ng-click="add()">Add dashboard</a>
+</div>

@@ -1,16 +1,16 @@
-﻿<div class="Manifests" ng-controller="PackageManifests.Properties.Controller">
+﻿<div class="Manifests" ng-controller="PackageManifests.Properties2.Controller">
     
     <form name="propertiesForm" ng-submit="save()" novalidate val-form-manager>
         
         <umb-editor-view>
  
             <umb-editor-header
-                name="properties[1].value"
-                               alias="properties[0].value"
-                nname-locked="true"
-                hhide-alias="true"
-                               hhide-icon="true"
-                               icon="properties[3].value"
+                name="data.name"
+                alias="data.alias"
+                icon="data.icon"
+                hide-icon="{{hideIcon}}"
+                hide-alias="hideAlias"
+                name-locked="nameLocked"
                 hide-description="true">
             </umb-editor-header>
     
@@ -18,10 +18,9 @@
             <umb-editor-container>
                 <umb-box>
                     <umb-box-content>
-                        <pre>{{properties[3].value}}</pre>
-                            <umb-property property="property" ng-repeat="property in properties">
-                                <umb-property-editor model="property"></umb-property-editor>
-                            </umb-property>
+                        <umb-property property="property" ng-repeat="property in data.properties">
+                            <umb-property-editor model="property"></umb-property-editor>
+                        </umb-property>
                     </umb-box-content>
                 </umb-box>
             </umb-editor-container>

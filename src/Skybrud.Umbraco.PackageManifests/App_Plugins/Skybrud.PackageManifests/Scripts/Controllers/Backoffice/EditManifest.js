@@ -10,13 +10,15 @@
 
         var data = $scope.manifest.manifest;
 
-        $http.post(baseUrl + "PostManifest?packageAlias=" + $routeParams.id, data).success(function () {
+        $http.post(baseUrl + "PostManifest?packageAlias=" + $routeParams.id, data).then(function () {
             notificationsService.success("Manifest saved", "The package.manifest file for <strong>" + $scope.manifest.name + "</strong> was successfully saved.");
         });
 
     };
 
-    $http.get(baseUrl + "GetManifestByAlias?alias=" + $routeParams.id).success(function (r) {
+    $http.get(baseUrl + "GetManifestByAlias?alias=" + $routeParams.id).then(function (r) {
+
+        r = r.data;
 
         $scope.manifest = r;
         $scope.name = r.name;
@@ -44,15 +46,36 @@
                 alias: "gridEditors",
                 label: "Grid editors",
                 value: r.manifest.gridEditors && Array.isArray(r.manifest.gridEditors) ? r.manifest.gridEditors : [],
-                view: "/App_Plugins/Skybrud.PackageManifests/Views/Editors/GridEditors.html",
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/Editors/Manifest/GridEditors.html",
                 updated: function (p) { $scope.manifest.manifest.gridEditors = p.value; }
             },
             {
                 alias: "propertyEditors",
                 label: "Property editors",
                 value: r.manifest.propertyEditors && Array.isArray(r.manifest.propertyEditors) ? r.manifest.propertyEditors : [],
-                view: "/App_Plugins/Skybrud.PackageManifests/Views/Editors/PropertyEditors.html",
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/Editors/Manifest/PropertyEditors.html",
                 updated: function (p) { $scope.manifest.manifest.propertyEditors = p.value; }
+            },
+            {
+                alias: "contentApps",
+                label: "Content apps",
+                value: r.manifest.contentApps && Array.isArray(r.manifest.contentApps) ? r.manifest.contentApps : [],
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/Editors/Manifest/ContentApps.html",
+                updated: function (p) { $scope.manifest.manifest.contentApps = p.value; }
+            },
+            {
+                alias: "dashboards",
+                label: "Dashboards",
+                value: r.manifest.contentApps && Array.isArray(r.manifest.dashboards) ? r.manifest.dashboards : [],
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/Editors/Manifest/Dashboards.html",
+                updated: function (p) { $scope.manifest.manifest.dashboards = p.value; }
+            },
+            {
+                alias: "sections",
+                label: "Sections",
+                value: r.manifest.contentApps && Array.isArray(r.manifest.sections) ? r.manifest.sections : [],
+                view: "/App_Plugins/Skybrud.PackageManifests/Views/Editors/Manifest/Sections.html",
+                updated: function (p) { $scope.manifest.manifest.sections = p.value; }
             }
         ];
             

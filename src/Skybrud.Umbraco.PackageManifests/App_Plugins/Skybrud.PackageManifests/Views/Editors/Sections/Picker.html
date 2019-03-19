@@ -1,0 +1,4 @@
+﻿<div ng-controller="PackageManifests.SectionsPicker.Controller">
+    <umb-node-preview style="max-width: 100%;" ng-repeat="section in sections" icon="section.icon" name="section.name" allow-remove="true" on-remove="remove($index)"></umb-node-preview>
+    <a href="" style="max-width: 100%;" class="umb-node-preview-add" ng-click="add()" prevent-default><localize key="general_add">Add</localize></a>
+</div>

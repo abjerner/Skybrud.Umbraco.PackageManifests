@@ -24,12 +24,11 @@
                 <td>
                     <div style="white-space: nowrap;">
                         <a href="#" prevent-default ng-click="editEditor(editor)"><i class="icon icon-edit"></i></a>
-                        <a href="#" prevent-default ng-click="deleteEditor($index)"><i class="icon icon-delete red"></i></a>
+                        <a href="#" prevent-default ng-click="deleteEditor($index, editor)"><i class="icon icon-delete red"></i></a>
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
-    <a href="#" prevent-default class="add-link" ng-click="addEditor()">Add property editor</a>
-    <umb-overlay ng-if="overlay.show" model="overlay" position="{{overlay.position || 'right'}}" view="overlay.view"></umb-overlay>
+    <a href="#" prevent-default class="umb-node-preview-add" ng-click="addEditor()">Add property editor</a>
 </div>

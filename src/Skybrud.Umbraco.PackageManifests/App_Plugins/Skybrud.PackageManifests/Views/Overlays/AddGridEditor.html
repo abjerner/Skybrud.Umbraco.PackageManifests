@@ -1,13 +1,38 @@
 ﻿<div>
-    <div ng-repeat="group in model.templateGroups">
-        <h5 ng-if="model.templateGroups.length > 1">{{group.name}}</h5>
-        <ul class="umb-card-grid">
-            <li ng-repeat="template in group.templates" class="-four-in-row" ng-click="model.submit(template)">
-                <a class="umb-card-grid-item" href="#" prevent-default>
-                    <i class="{{template.icon}}"></i>
-                    {{template.name}}
-                </a>
-            </li>
-        </ul>
-    </div>
+    <umb-editor-view>
+        <umb-editor-header
+            name="model.title"
+            name-locked="true"
+            hide-alias="true"
+            hide-icon="true"
+            hide-description="true">
+        </umb-editor-header>
+        <umb-editor-container>
+            <umb-box>
+                <umb-box-content>
+                    <div ng-repeat="group in model.templateGroups">
+                        <h5 ng-if="model.templateGroups.length > 1">{{group.name}}</h5>
+                        <ul class="umb-card-grid">
+                            <li ng-repeat="template in group.templates" class="-four-in-row" ng-click="model.submit(template)">
+                                <a class="umb-card-grid-item" href="#" prevent-default>
+                                    <i class="{{template.icon}}"></i>
+                                    {{template.name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </umb-box-content>
+            </umb-box>
+        </umb-editor-container>
+        <umb-editor-footer>
+            <umb-editor-footer-content-right>
+                <umb-button
+                    type="button"
+                    button-style="link"
+                    label-key="general_close"
+                    action="model.close()">
+                </umb-button>
+            </umb-editor-footer-content-right>
+        </umb-editor-footer>
+    </umb-editor-view>
 </div>

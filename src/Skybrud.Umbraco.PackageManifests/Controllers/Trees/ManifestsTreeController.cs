@@ -1,14 +1,16 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System.Net.Http.Formatting;
 using Skybrud.Umbraco.PackageManifests.Models;
-using umbraco.BusinessLogic.Actions;
+using Umbraco.Core;
 using Umbraco.Web.Models.Trees;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.Trees;
 
-namespace Skybrud.Umbraco.PackageManifests.Controllers {
+namespace Skybrud.Umbraco.PackageManifests.Controllers.Trees {
 
-    [Tree("developer", "packageManifests", "Package Manifests")]
+    //[Tree(Constants.Applications.Settings, "skybrud.analytics", "Skybrud.Analytics", "icon-folder", "icon-folder", sortOrder: 15)]
+    //[Tree("sectionAlias", "treeAlias", "icon-folder", "icon-folder", true, 15, "Skybrud", "Skybrud.Analytics")]
+    [Tree(Constants.Applications.Settings, "packageManifests", IsSingleNodeTree = true, SortOrder = 3, TreeGroup = Constants.Trees.Groups.Settings, TreeTitle = "Package Manifests")]
     [PluginController("PackageManifests")]
     public class ManifestsTreeController : TreeController {
 
@@ -30,15 +32,8 @@ namespace Skybrud.Umbraco.PackageManifests.Controllers {
 
             MenuItemCollection collection = new MenuItemCollection();
 
-            // Add a "Reload" menu item
-            if (id == "-1") collection.Items.Add<RefreshNode, ActionRefresh>(Localize("actions/" + ActionRefresh.Instance.Alias));
-
             return collection;
 
-        }
-
-        private string Localize(string key) {
-            return ApplicationContext.Services.TextService.Localize(key, CultureInfo.CurrentCulture);
         }
 
     }

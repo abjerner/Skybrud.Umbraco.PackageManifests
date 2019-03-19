@@ -38,6 +38,10 @@ namespace Skybrud.Umbraco.PackageManifests.Models.Umbraco {
             return IsParameterEditor;
         }
 
+        public bool ShouldSerializePreValues() {
+            return PreValues != null && PreValues.Fields.Length > 0;
+        }
+
     }
 
 }
