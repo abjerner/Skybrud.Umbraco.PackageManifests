@@ -104,8 +104,8 @@
       "icon": "icon-pictures-alt-2",
       "config": "/App_Plugins/Skybrud.ImagePicker/Views/ImagePickerPreValues.html",
       "editor": {
-        "view": "/App_Plugins/Skybrud.LinkPicker/Views/LinkPickerGridEditor.html",
-        "icon": "icon-link",
+        "view": "/App_Plugins/Skybrud.LinkPicker/Views/ImagePickerGridEditor.html",
+        "icon": "icon-pictures-alt-2",
         "name": "Images"
       }
     },
