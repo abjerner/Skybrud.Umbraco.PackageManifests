@@ -3,9 +3,17 @@
         return {
             request: function (request) {
                 var url = request.url.split("?");
-                if (url[0] === "/App_Plugins/PackageManifests/backoffice/packageManifests/edit.html") {
-                    request.url = "/App_Plugins/Skybrud.PackageManifests/backoffice/packageManifests/edit.html";
+
+
+                switch (url[0]) {
+
+                    case "/App_Plugins/PackageManifests/backoffice/packageManifests/create.html":
+                    case "/App_Plugins/PackageManifests/backoffice/packageManifests/edit.html":
+                        request.url = url[0].replace("/App_Plugins/PackageManifests/", "/App_Plugins/Skybrud.PackageManifests/");
+                        break;
+	                
                 }
+
                 return request || $q.when(request);
             }
         };

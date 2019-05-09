@@ -1,7 +1,8 @@
-using System.Globalization;
 using System.Net.Http.Formatting;
 using Skybrud.Umbraco.PackageManifests.Models;
 using umbraco.BusinessLogic.Actions;
+using Umbraco.Core;
+using Umbraco.Core.Services;
 using Umbraco.Web.Models.Trees;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.Trees;
@@ -31,14 +32,19 @@ namespace Skybrud.Umbraco.PackageManifests.Controllers {
             MenuItemCollection collection = new MenuItemCollection();
 
             // Add a "Reload" menu item
-            if (id == "-1") collection.Items.Add<RefreshNode, ActionRefresh>(Localize("actions/" + ActionRefresh.Instance.Alias));
+            if (id == Constants.System.Root.ToInvariantString()) {
+                
+                //set the default to create
+                collection.DefaultMenuAlias = ActionNew.Instance.Alias;
+
+                // root actions              
+                collection.Items.Add<ActionNew>(Services.TextService.Localize($"actions/{ActionNew.Instance.Alias}"));
+                collection.Items.Add<RefreshNode, ActionRefresh>(Services.TextService.Localize($"actions/{ActionRefresh.Instance.Alias}"), hasSeparator: true);
+                return collection;
+            }
 
             return collection;
 
-        }
-
-        private string Localize(string key) {
-            return ApplicationContext.Services.TextService.Localize(key, CultureInfo.CurrentCulture);
         }
 
     }

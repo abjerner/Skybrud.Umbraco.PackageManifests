@@ -1,0 +1,15 @@
+﻿<div ng-controller="Skybrud.PackageManifests.CreateManifest.Controller as vm">
+    <div class="umb-pane">
+        <div ng-show="vm.error">
+            <div class="alert alert-error">
+                <div><strong>{{vm.error.data.message}}</strong></div>
+            </div>
+        </div>
+        <form name="createDictionaryForm" ng-submit="vm.createManifest()" val-form-manager>
+            <umb-control-group label="Enter an alias" hide-label="true">
+                <input type="text" name="itemKey" ng-model="vm.alias" class="umb-textstring textstring input-block-level" required/>
+            </umb-control-group>
+            <button type="submit" class="btn btn-primary"><localize key="general_create">Create</localize></button>
+        </form>
+    </div>
+</div>

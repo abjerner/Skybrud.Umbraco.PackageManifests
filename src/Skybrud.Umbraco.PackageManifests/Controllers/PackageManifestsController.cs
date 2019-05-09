@@ -2,10 +2,13 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 using System.Web.Http;
 using Skybrud.Umbraco.PackageManifests.Models;
 using Skybrud.Umbraco.PackageManifests.Models.Umbraco;
+using Umbraco.Core.IO;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
 
@@ -29,6 +32,29 @@ namespace Skybrud.Umbraco.PackageManifests.Controllers {
 
             PackageManifest manifest = Manifests.GetManifestByAlias(alias);
             if (manifest == null) return Request.CreateResponse(HttpStatusCode.NotFound, "Manifest not found");
+
+            return Json(manifest);
+
+        }
+
+        [HttpPut]
+        public object CreateManifest(string packageAlias) {
+
+            if (string.IsNullOrWhiteSpace(packageAlias)) return Error(HttpStatusCode.BadRequest, "No package alias specified.");
+            if (!Regex.IsMatch(packageAlias, "^[a-zA-Z0-9_\\.-]+$")) return Error(HttpStatusCode.BadRequest, "Package alias must be an alphanumeric value.");
+
+            string path1 = IOHelper.MapPath($"~/App_Plugins/{packageAlias}");
+            string path2 = IOHelper.MapPath($"~/App_Plugins/{packageAlias}/package.manifest");
+
+            if (System.IO.File.Exists(path2)) {
+                return Error(HttpStatusCode.Conflict, "A package manifest with the specified alias already exists.");
+            }
+
+            System.IO.Directory.CreateDirectory(path1);
+
+            System.IO.File.WriteAllText(path2, "{}", Encoding.UTF8);
+
+            PackageManifest manifest = Manifests.GetManifestByAlias(packageAlias);
 
             return Json(manifest);
 
@@ -70,6 +96,10 @@ namespace Skybrud.Umbraco.PackageManifests.Controllers {
                         templates = x
                     })
             );
+        }
+
+        private object Error(HttpStatusCode code, string message) {
+            return Request.CreateResponse(code, new {data = new {message}});
         }
 
     }
