@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Skybrud.Essentials.Json;
@@ -49,6 +51,24 @@ namespace Skybrud.Umbraco.PackageManifests.Models {
             string path = IOHelper.MapPath("~/App_Plugins/" + alias + "/package.manifest");
 
             return PackageManifest.Load(path);
+
+        }
+
+        public PackageManifest Create(string alias) {
+
+            if (string.IsNullOrWhiteSpace(alias)) throw new ArgumentNullException(nameof(alias));
+            if (!Regex.IsMatch(alias, "^[a-zA-Z0-9_\\.-]+$")) throw new ArgumentException("Invalid alias", nameof(alias));
+
+            string path1 = IOHelper.MapPath($"~/App_Plugins/{alias}");
+            string path2 = IOHelper.MapPath($"~/App_Plugins/{alias}/package.manifest");
+
+            if (File.Exists(path2)) throw new Exception("A package manifest with the specified alias already exists.");
+
+            Directory.CreateDirectory(path1);
+
+            File.WriteAllText(path2, "{}", Encoding.UTF8);
+
+            return GetManifestByAlias(alias);
 
         }
 

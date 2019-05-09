@@ -43,19 +43,14 @@ namespace Skybrud.Umbraco.PackageManifests.Controllers {
             if (string.IsNullOrWhiteSpace(packageAlias)) return Error(HttpStatusCode.BadRequest, "No package alias specified.");
             if (!Regex.IsMatch(packageAlias, "^[a-zA-Z0-9_\\.-]+$")) return Error(HttpStatusCode.BadRequest, "Package alias must be an alphanumeric value.");
 
-            string path1 = IOHelper.MapPath($"~/App_Plugins/{packageAlias}");
-            string path2 = IOHelper.MapPath($"~/App_Plugins/{packageAlias}/package.manifest");
+            // Make sure the package.manifest file doesn't already exist
+            string path = IOHelper.MapPath($"~/App_Plugins/{packageAlias}/package.manifest");
+            if (System.IO.File.Exists(path)) return Error(HttpStatusCode.Conflict, "A package manifest with the specified alias already exists.");
 
-            if (System.IO.File.Exists(path2)) {
-                return Error(HttpStatusCode.Conflict, "A package manifest with the specified alias already exists.");
-            }
+            // Create the new package.manifest file
+            PackageManifest manifest = Manifests.Create(packageAlias);
 
-            System.IO.Directory.CreateDirectory(path1);
-
-            System.IO.File.WriteAllText(path2, "{}", Encoding.UTF8);
-
-            PackageManifest manifest = Manifests.GetManifestByAlias(packageAlias);
-
+            // Return as JSON
             return Json(manifest);
 
         }
