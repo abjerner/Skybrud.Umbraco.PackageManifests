@@ -111,6 +111,18 @@
       }
     },
     {
+      "name": "Video Picker",
+      "group": "Skybrud.dk",
+      "view": "/App_Plugins/Skybrud.VideoPicker/Views/VideosGridEditor.html",
+      "icon": "icon-pictures-alt-2",
+      "config": "/App_Plugins/Skybrud.VideoPicker/Views/VideoPickerPreValues.html",
+      "editor": {
+        "view": "/App_Plugins/Skybrud.VideoPicker/Views/VideosGridEditor.html",
+        "icon": "icon-video",
+        "name": "Videos"
+      }
+    },
+    {
       "name": "Doc Type Grid Editor",
       "icon": "icon-item-arrangement",
       "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
